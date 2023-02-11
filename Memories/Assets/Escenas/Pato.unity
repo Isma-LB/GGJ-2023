@@ -489,7 +489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &794298850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,7 +694,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 856062543}
   m_Follow: {fileID: 856062543}
   m_Lens:
-    FieldOfView: 27.72
+    FieldOfView: 41
     OrthographicSize: 39.710804
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -773,7 +773,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 41.1
+  field of view: 10
   orthographic: 0
   orthographic size: 39.710804
   m_Depth: -1
@@ -899,7 +899,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1034649584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -921,7 +921,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 856062543}
   m_Follow: {fileID: 856062543}
   m_Lens:
-    FieldOfView: 27.72
+    FieldOfView: 10
     OrthographicSize: 39.710804
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -1147,6 +1147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73ee63f04a782c49b2be14a9163dbb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TopCamera: {fileID: 794298850}
+  OnEnterCamera: {fileID: 1034649584}
+  WinCamera: {fileID: 884466572}
 --- !u!4 &1507511305
 Transform:
   m_ObjectHideFlags: 0
