@@ -22,6 +22,7 @@ namespace Pathfinding {
 		Collider2D jugador;
 		bool seleccionable = true;
 
+
 		IAstarAI ai;
 
 		void OnEnable () {
