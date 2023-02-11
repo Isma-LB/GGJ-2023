@@ -17,17 +17,32 @@ public class CollectManager : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         MemoryElement collectable;
-        if(other.TryGetComponent<MemoryElement>(out collectable)){
-            Debug.Log("Collide with: "+ collectable.memoryName);
-            foreach (MemoryItem item in list){
-                if(item.name == collectable.memoryName){
-                    item.collected = true;
-                    collectable.Collect();
-                    Draw();
-                }
-            }
+        if(other.TryGetComponent<MemoryElement>(out collectable))
+        {
+            HandleCollectable(collectable);
         }
     }
+
+    private void HandleCollectable(MemoryElement collectable)
+    {
+        bool completed = true;
+        foreach (MemoryItem item in list)
+        {
+            if (item.name == collectable.memoryName)
+            {
+                item.collected = true;
+                collectable.Collect();
+                Draw();
+            }
+            if(!item.collected){
+                completed = false;
+            }
+        }
+        if(completed){
+            FindObjectOfType<GameManager>().winGame();
+        }
+    }
+
     void Draw(){
         if(ui != null){
             ui.DisplayList(list);
