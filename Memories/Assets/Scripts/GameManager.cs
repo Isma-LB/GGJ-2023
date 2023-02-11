@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
             restartGame();
         }
     }
-    void gameOver(){
+    public void gameOver(){
         Debug.Log("Game over!");
         onGameOver.Invoke();
     }
