@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Pathfinding {
 	/// <summary>
@@ -21,6 +22,7 @@ namespace Pathfinding {
 		public float alcance = 16f;
 		Collider2D jugador;
 		bool seleccionable = true;
+		[SerializeField] List<GameObject> PuntosControl;
 
 
 		IAstarAI ai;
@@ -52,7 +54,7 @@ namespace Pathfinding {
 			jugador = Physics2D.OverlapCircle(targetSelector.transform.position, alcance, playerLayer);
 			if(jugador != null)
             {
-				QuitarTarget();
+				//QuitarTarget();
 				target = jugador.transform;
 			}
 		}
@@ -73,15 +75,16 @@ namespace Pathfinding {
 		public IEnumerator TimerOlvidar()
         {
 			seleccionable = false;
-			yield return new WaitForSeconds(3);
-			target = null;
-			StartCoroutine(TimerEscape());
+			yield return new WaitForSeconds(10);
+            target = PuntosControl[0].transform;
+            target = null;
+            StartCoroutine(TimerEscape());
 
-		}
+        }
 
 		public IEnumerator TimerEscape()
         {
-			yield return new WaitForSeconds(3);
+			yield return new WaitForSeconds(5);
 			seleccionable = true;
 
 		}
