@@ -9,6 +9,9 @@ public class CollectManager : MonoBehaviour
     void Start()
     {
         ui = FindObjectOfType<CollectableUI>();
+        foreach(MemoryItem item in list){
+            item.collected = false;
+        }
         Draw();
     }
     void OnTriggerEnter2D(Collider2D other)
