@@ -16,6 +16,12 @@ namespace Pathfinding {
 	public class AIDestinationSetter : VersionedMonoBehaviour {
 		/// <summary>The object that the AI should move to</summary>
 		public Transform target;
+		[SerializeField] LayerMask playerLayer;
+		[SerializeField] GameObject targetSelector;
+		public float alcance = 16f;
+		Collider2D jugador;
+		bool seleccionable = true;
+
 		IAstarAI ai;
 
 		void OnEnable () {
@@ -34,6 +40,49 @@ namespace Pathfinding {
 		/// <summary>Updates the AI's destination every frame</summary>
 		void Update () {
 			if (target != null && ai != null) ai.destination = target.position;
+			if(target == null && seleccionable)
+            {
+				SeleccionarObjetivo();
+			}
+
+        }
+		private void SeleccionarObjetivo()
+		{
+			jugador = Physics2D.OverlapCircle(targetSelector.transform.position, alcance, playerLayer);
+			if(jugador != null)
+            {
+				QuitarTarget();
+				target = jugador.transform;
+			}
+		}
+
+		private void OnDrawGizmosSelected()
+		{
+			if (targetSelector == null)
+				return;
+
+			Gizmos.DrawWireSphere(targetSelector.transform.position, alcance);
+		}
+
+		public void QuitarTarget()
+        {
+			StartCoroutine(TimerOlvidar());
+		}
+
+		public IEnumerator TimerOlvidar()
+        {
+			seleccionable = false;
+			yield return new WaitForSeconds(3);
+			target = null;
+			StartCoroutine(TimerEscape());
+
+		}
+
+		public IEnumerator TimerEscape()
+        {
+			yield return new WaitForSeconds(3);
+			seleccionable = true;
+
 		}
 	}
 }
