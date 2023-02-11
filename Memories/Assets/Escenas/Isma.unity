@@ -123,61 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &37863492 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4623131972768267635, guid: be53d068f6b6758a2b7e9bcd7a428e27, type: 3}
-  m_PrefabInstance: {fileID: 4623131972738989367}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &37863498
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 37863492}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.7
---- !u!114 &37863499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 37863492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dca5429004b19ad5aa766ad5d00ff39b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  list:
-  - {fileID: 11400000, guid: e159bf114156cbeccb5ad298f981a033, type: 2}
-  - {fileID: 11400000, guid: b0b632a0ae06985f0be93b8d1d2c02f3, type: 2}
 --- !u!4 &37863505 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4623131972768267646, guid: be53d068f6b6758a2b7e9bcd7a428e27, type: 3}
@@ -1994,13 +1939,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4623131972768267635, guid: be53d068f6b6758a2b7e9bcd7a428e27, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 37863498}
-    - targetCorrespondingSourceObject: {fileID: 4623131972768267635, guid: be53d068f6b6758a2b7e9bcd7a428e27, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 37863499}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be53d068f6b6758a2b7e9bcd7a428e27, type: 3}
 --- !u!1001 &6269725603395890537
 PrefabInstance:
