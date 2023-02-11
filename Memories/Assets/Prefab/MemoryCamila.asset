@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7fbe3287cf761bbbad27c704c62204a, type: 3}
-  m_Name: Memory2
+  m_Name: MemoryCamila
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: be340a165cb9c8d4cb50f1deeb51d4ea, type: 3}
-  collected: 1
+  sprite: {fileID: 21300000, guid: ef9977ed07c438845a52c577f4ffcc3a, type: 3}
+  collected: 0
