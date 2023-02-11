@@ -60,3 +60,6 @@ crashlytics-build.properties
 Icon?
 ehthumbs.db
 Thumbs.db
+Memories/UserSettings/Search.index
+Memories/UserSettings/Search.settings
+Memories/Packages/packages-lock.json
