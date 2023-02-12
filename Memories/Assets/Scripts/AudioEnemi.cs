@@ -27,9 +27,10 @@ public class AudioEnemi : MonoBehaviour
         if (jugador != null)
         {
             audioManager.IsChasing = true;
-            Debug.Log("find");
-            //QuitarTarget();
-            //target = jugador.transform;
+        }
+        else
+        {
+            audioManager.IsChasing = false;
         }
     }
     private void OnDrawGizmosSelected()

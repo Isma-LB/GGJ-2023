@@ -24689,6 +24689,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73ee63f04a782c49b2be14a9163dbb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1344276794 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5895723266373293052, guid: c13aca6fd96db63cba92d651052bb40c, type: 3}
+  m_PrefabInstance: {fileID: 1451563551}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df1ef8b10d9c30b70b54c182b7e535a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1451563551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25026,6 +25037,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7728579782609164735, guid: 47f5c3d0c3b2fba44b21959a675988f3, type: 3}
+      propertyPath: alcance
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728579782609164735, guid: 47f5c3d0c3b2fba44b21959a675988f3, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1344276794}
     m_RemovedComponents:
     - {fileID: 2776366571438741470, guid: 47f5c3d0c3b2fba44b21959a675988f3, type: 3}
     - {fileID: 9059278707312006247, guid: 47f5c3d0c3b2fba44b21959a675988f3, type: 3}
