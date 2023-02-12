@@ -2328,6 +2328,8 @@ MonoBehaviour:
     m_Bits: 16
   targetSelector: {fileID: 1710474920}
   alcance: 13
+  PuntosControl:
+  - {fileID: 1160742737}
 --- !u!1 &1385447155
 GameObject:
   m_ObjectHideFlags: 0
