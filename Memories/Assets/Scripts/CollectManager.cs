@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CollectManager : MonoBehaviour
 {
+    [SerializeField] GameObject enemigo;
     public List<MemoryItem> list;
     CollectableUI ui;
     DialogManager dialog;
@@ -44,7 +45,8 @@ public class CollectManager : MonoBehaviour
             }
         }
         if(completed){
-            Invoke("TriggerWinEvent", delay);
+            enemigo.SetActive(false);
+            TriggerWinEvent();
         }
     }
 

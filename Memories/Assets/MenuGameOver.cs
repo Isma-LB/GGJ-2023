@@ -14,4 +14,9 @@ public class MenuGameOver : MonoBehaviour
     {
         SceneManager.LoadScene(nombre);
     }
+
+    public void Activar()
+    {
+        gameObject.SetActive(true);
+    }
 }

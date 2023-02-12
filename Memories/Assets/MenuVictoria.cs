@@ -9,4 +9,8 @@ public class MenuVictoria : MonoBehaviour
     {
         SceneManager.LoadScene("Martin");
     }
+    public void Activar()
+    {
+        gameObject.SetActive(true);
+    }
 }

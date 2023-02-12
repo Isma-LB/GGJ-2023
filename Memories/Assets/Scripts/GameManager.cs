@@ -7,7 +7,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] UnityEvent onWinGame; 
-    [SerializeField] UnityEvent onGameOver; 
+    [SerializeField] UnityEvent onGameOver;
+    bool gano = false;
+    bool perdio = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +20,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.F)){
+        if(Input.GetKeyDown(KeyCode.R)){
             restartGame();
         }
 
@@ -25,14 +28,24 @@ public class GameManager : MonoBehaviour
         {
             winGame();
         }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            gameOver();
+        }
     }
     public void gameOver(){
-        Debug.Log("Game over!");
+        if(gano == false)
+        {
         onGameOver.Invoke();
+            perdio = true;
+        }
     }
     public void winGame(){
-        Debug.Log("You Win!");
+        if(perdio == false)
+        {
         onWinGame.Invoke();
+            gano = true;
+        }
     }
     void restartGame(){
         Debug.Log("Restart game!");

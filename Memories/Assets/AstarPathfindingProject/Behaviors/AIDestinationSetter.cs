@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+
 namespace Pathfinding {
 	/// <summary>
 	/// Sets the destination of an AI to the position of a specified object.
@@ -21,6 +22,7 @@ namespace Pathfinding {
 		[SerializeField] GameObject targetSelector;
 		public float alcance = 16f;
 		Collider2D jugador;
+
 		//bool seleccionable = true;
 		//[SerializeField] List<GameObject> PuntosControl;
 
@@ -41,21 +43,25 @@ namespace Pathfinding {
 		}
 
 		/// <summary>Updates the AI's destination every frame</summary>
+		/// 
 		void Update () {
 			if (target != null && ai != null) ai.destination = target.position;
-			if(target == null)
-            {
-				SeleccionarObjetivo();
-			}
+            //SeleccionarObjetivo();
+            //if(target == null)
+            //         {
+            //	SeleccionarObjetivo();
+            //}
 
         }
 		private void SeleccionarObjetivo()
 		{
 			jugador = Physics2D.OverlapCircle(targetSelector.transform.position, alcance, playerLayer);
+			
 			if(jugador != null)
             {
+				Debug.Log("find");
 				//QuitarTarget();
-				target = jugador.transform;
+				//target = jugador.transform;
 			}
 		}
 
