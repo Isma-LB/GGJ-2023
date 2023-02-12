@@ -40,5 +40,9 @@ public class AudioEnemi : MonoBehaviour
 
         Gizmos.DrawWireSphere(targetSelector.transform.position, alcance);
     }
+    private void OnDestroy()
+    {
+            audioManager.IsChasing = false;
+    }
 
 }

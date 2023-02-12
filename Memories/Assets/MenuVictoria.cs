@@ -7,7 +7,7 @@ public class MenuVictoria : MonoBehaviour
 {
     public void Menu()
     {
-        SceneManager.LoadScene("Martin");
+        SceneManager.LoadScene("MenuInicio");
     }
     public void Activar()
     {
