@@ -529,6 +529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 82063592}
   - component: {fileID: 82063591}
+  - component: {fileID: 82063593}
   m_Layer: 0
   m_Name: Global
   m_TagString: Untagged
@@ -630,6 +631,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &82063593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82063590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd9e7e4f38dd6e4c824b702e4ec3690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  luz: {fileID: 82063591}
+  fadeSpeed: 0.3
 --- !u!1 &89347574
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,6 +818,7 @@ GameObject:
   - component: {fileID: 198365457}
   - component: {fileID: 198365456}
   - component: {fileID: 198365455}
+  - component: {fileID: 198365459}
   m_Layer: 0
   m_Name: Enemi
   m_TagString: Untagged
@@ -918,6 +934,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &198365459
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198365454}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1001 &393044202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1109,6 +1160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 625483861}
   - component: {fileID: 625483860}
+  - component: {fileID: 625483862}
   m_Layer: 0
   m_Name: fog
   m_TagString: Untagged
@@ -1156,9 +1208,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 24
   m_Sprite: {fileID: 7482667652216324306, guid: 57f729b21ef8eef4086f99cd5cd2b802, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.16470589}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.25490198}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1183,6 +1235,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &625483862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625483859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e831a8517c93834696b9c07548a6cb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  niebla: {fileID: 625483860}
+  fadeSpeed: 2.2
 --- !u!1001 &690738639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1191,6 +1257,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1231303303, guid: be53d068f6b6758a2b7e9bcd7a428e27, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4623131972768267635, guid: be53d068f6b6758a2b7e9bcd7a428e27, type: 3}
       propertyPath: m_Name
       value: Player
@@ -24337,6 +24407,30 @@ MonoBehaviour:
       - m_Target: {fileID: 1281554881}
         m_TargetAssemblyTypeName: S_CameraController, Assembly-CSharp
         m_MethodName: winCamera
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 625483862}
+        m_TargetAssemblyTypeName: EfectosWin, Assembly-CSharp
+        m_MethodName: FadeOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 82063593}
+        m_TargetAssemblyTypeName: LuzWin, Assembly-CSharp
+        m_MethodName: FaidIn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

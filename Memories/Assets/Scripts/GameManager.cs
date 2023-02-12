@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.F)){
             restartGame();
         }
+
+        if (Input.GetKeyDown(KeyCode.V) )
+        {
+            winGame();
+        }
     }
     public void gameOver(){
         Debug.Log("Game over!");
