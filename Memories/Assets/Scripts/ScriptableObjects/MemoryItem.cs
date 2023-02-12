@@ -4,5 +4,6 @@ using UnityEngine;
 public class MemoryItem : ScriptableObject
 {
     public Sprite sprite;
+    public Sprite memoryRootSprite;
     public bool collected = false;
 }
