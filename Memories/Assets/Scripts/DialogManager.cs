@@ -21,7 +21,7 @@ public class DialogManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space && messages.Count() > 0)){
+        if(Input.GetKeyDown(KeyCode.Space) && messages.Count > 0){
             Debug.Log("Next dialog");
 
             DisplayDialog(messages[index % messages.Count]);
