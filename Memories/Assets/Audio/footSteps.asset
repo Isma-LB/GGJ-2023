@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41b0d95fd2806f36a1fe901585a3b70, type: 3}
+  m_Name: footSteps
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 1eeaf0e39b64a0368a19180ba722494d, type: 3}
+  - {fileID: 8300000, guid: fa6efa79d6541a6a088851a1a8ef7ef6, type: 3}
+  - {fileID: 8300000, guid: 747f59785f043bb2b8a925d95c4311dc, type: 3}
+  - {fileID: 8300000, guid: fedc615e05d83145b95ca9d513569691, type: 3}
+  pitch: 1.608
+  pitchVariation: 0.029
+  volume: 0.679
+  volumeVariation: 0.211

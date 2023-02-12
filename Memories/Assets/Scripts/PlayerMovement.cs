@@ -10,12 +10,13 @@ public class PlayerMovement : MonoBehaviour
     SpriteRenderer sprite;
     Animator animator;
     Vector2 input;
+    AudioManager audioManager;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = rb.GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-
+        audioManager = FindObjectOfType<AudioManager>();
     }
     // Update is called once per frame
     void Update()
@@ -35,10 +36,12 @@ public class PlayerMovement : MonoBehaviour
         if(input == Vector2.zero)
         {
             animator.Play("Idle");
+            audioManager.IsWaling = false;
         }
         else
         {
             animator.Play("Caminar");
+            audioManager.IsWaling = true;
         }
     }
     void FixedUpdate()

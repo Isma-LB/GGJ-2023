@@ -7,8 +7,13 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource normalSong;
     [SerializeField] AudioSource chaseSong;
     [SerializeField] AudioSource changeEffect;
+    [SerializeField] AudioSource effectsSource;
+    [SerializeField] SoundEffectCollection footsteps;
+    [SerializeField, Range(0,1)] float musicVolume = 0.5f;
     [SerializeField, Range(0,2)] float fadeSpeed = 1;
+    [SerializeField, Range(0,2)] float footstepsPeriod = 1;
     bool isChasing = false;
+    float nextFootstep = 0;
 
     public bool IsChasing { 
         get => isChasing;
@@ -28,6 +33,21 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public bool IsWaling {
+    set{
+        if(value == true){
+            nextFootstep -= Time.deltaTime;
+            if(nextFootstep < 0){
+                footsteps.play(ref effectsSource);
+                nextFootstep = footstepsPeriod;
+            }
+        }
+    } 
+    }
+
+    public void PlayStep(){
+        footsteps.play(ref effectsSource);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -42,15 +62,15 @@ public class AudioManager : MonoBehaviour
 
     IEnumerator fadeIn(AudioSource audioSource){
         float volume = 0;
-        while(volume < 1f){
+        while(volume < musicVolume){
             volume += Time.unscaledDeltaTime * fadeSpeed;
             audioSource.volume = volume;
             yield return null;
         }
-        audioSource.volume = 1f;
+        audioSource.volume = musicVolume;
     }
     IEnumerator fadeOut(AudioSource audioSource){
-        float volume = 1;
+        float volume = musicVolume;
         while(volume > 0){
             volume -= Time.unscaledDeltaTime * fadeSpeed;
             audioSource.volume = volume;
