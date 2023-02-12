@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4db6ae082d62e0f40b40a9977cc70a0e, type: 3}
-  m_Name: TestDialog2
+  m_Name: DialogoCamila
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 21300000, guid: 3042b019b052942a1baf7aa49d7ca6bb, type: 3}
-  displayTime: 10
-  dialogText: Este es el dialogo 2
+  characterSprite: {fileID: 21300000, guid: 7c12fc489880d085e8d9e05273afed56, type: 3}
+  displayTime: 5
+  dialogText: "\xBFVerdad que soy guapa abue?"

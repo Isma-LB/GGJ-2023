@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 15, y: 10}
-  m_SizeDelta: {x: 162, y: 162}
+  m_SizeDelta: {x: 197.0605, y: 197.0605}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &5610114393401735481
 CanvasRenderer:
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1680392, g: 0.9134438, b: 0.24546717, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -144,8 +144,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Hola este es un dialogo de prueba
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4d97f610b3ac61740a4faafb7e064fab, type: 2}
+  m_sharedMaterial: {fileID: 7618036668520647394, guid: 4d97f610b3ac61740a4faafb7e064fab, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -320,8 +320,10 @@ MonoBehaviour:
   canvasGroup: {fileID: 5610114394571781403}
   fadeSpeed: 1
   messages:
-  - {fileID: 11400000, guid: 6f00b38c3f40156508c69c8dc1b75353, type: 2}
-  - {fileID: 11400000, guid: 2a2531b087b9aeaf4b8c082d7bcbbf78, type: 2}
+  - {fileID: 11400000, guid: c8fe53ef9dd67d4e8a320b5ba86e10c3, type: 2}
+  - {fileID: 11400000, guid: 91b5bede8558f7332917d41b323ceb74, type: 2}
+  - {fileID: 11400000, guid: 56b28b0e2ed63eda89730cb47bf38fe4, type: 2}
+  - {fileID: 11400000, guid: b43706af8c447311fa46da7521da30e1, type: 2}
 --- !u!1 &5610114394582866318
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9511796, g: 0.92471266, b: 0.69543797, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.8235294}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -398,4 +400,4 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.4

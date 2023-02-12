@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4db6ae082d62e0f40b40a9977cc70a0e, type: 3}
-  m_Name: TestDialog
+  m_Name: DialogoDavid
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 21300000, guid: da545229eea36164d8b8cba2f75a1143, type: 3}
-  dialogText: Este es el mensaje del dialogo de prueba :)
+  characterSprite: {fileID: 21300000, guid: 25e22e897843b98a7ba2c29f72871bb6, type: 3}
+  displayTime: 4
+  dialogText: No le digas a mi mama
