@@ -546,7 +546,7 @@ Transform:
   - {fileID: 5895723265318904209}
   - {fileID: 1842955829}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5895723266373293052
 MonoBehaviour:
@@ -565,6 +565,10 @@ MonoBehaviour:
   changeEffect: {fileID: 5895723265318904208}
   effectsSource: {fileID: 1842955830}
   footsteps: {fileID: 11400000, guid: 14881f54dae89064cb7073bdfe3cd64e, type: 2}
+  pickItem: {fileID: 11400000, guid: f12a8124e0f1bb99383c28aa9263f329, type: 2}
+  winEffect: {fileID: 11400000, guid: dffc82b0185563ef3a6f345f4771f69a, type: 2}
+  gameOverEffect: {fileID: 11400000, guid: 350f02580378cc0a6bb5dff523662340, type: 2}
+  clickButton: {fileID: 11400000, guid: 373bec02927964b0e9d1073023149e4c, type: 2}
   musicVolume: 0.35
   fadeSpeed: 1
   footstepsPeriod: 0.278
