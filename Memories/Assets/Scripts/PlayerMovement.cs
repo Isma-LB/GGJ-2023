@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     SpriteRenderer sprite;
     Animator animator;
     Vector2 input;
+    Vector2 rot;
     AudioManager audioManager;
     Gyroscope gyro;
     void Start()
@@ -33,8 +34,27 @@ public class PlayerMovement : MonoBehaviour
         input.Normalize();
 
         if(enableMobileInput && gyro.enabled == true){
-            input.x += gyro.rotationRate.x;
-            input.y += gyro.rotationRate.y;
+            rot.x += gyro.rotationRate.x;
+            rot.y += gyro.rotationRate.y;
+            const float verticalTreshold = 0.5f;
+            const float horizontalTreshold = 0.5f;
+            if (rot.x > horizontalTreshold)
+            {
+                input.x += 1;
+            }
+            if (rot.x < -horizontalTreshold)
+            {
+                input.x += -1;
+            }
+            if (rot.y > verticalTreshold)
+            {
+                input.y += 1;
+            }
+            if (rot.y < -verticalTreshold)
+            {
+                input.y += -1;
+            }
+            //input = new Vector2(gyro.rotationRate.x, gyro.rotationRate.y);
         }
 
         if(input.x < 0 && !sprite.flipX)
