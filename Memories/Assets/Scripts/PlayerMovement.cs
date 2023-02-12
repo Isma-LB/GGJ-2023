@@ -7,17 +7,23 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField, Range(0f,10f) ] float moveSpeed = 5f;
     [SerializeField] ParticleSystem particulas;
+    [SerializeField] bool enableMobileInput = true;
     Rigidbody2D rb;
     SpriteRenderer sprite;
     Animator animator;
     Vector2 input;
     AudioManager audioManager;
+    Gyroscope gyro;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = rb.GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         audioManager = FindObjectOfType<AudioManager>();
+        if(enableMobileInput){
+            gyro = Input.gyro;
+            gyro.enabled = true;
+        }
     }
     // Update is called once per frame
     void Update()
@@ -25,6 +31,11 @@ public class PlayerMovement : MonoBehaviour
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
         input.Normalize();
+
+        if(enableMobileInput && gyro.enabled == true){
+            input.x += gyro.rotationRate.x;
+            input.y += gyro.rotationRate.y;
+        }
 
         if(input.x < 0 && !sprite.flipX)
         {
