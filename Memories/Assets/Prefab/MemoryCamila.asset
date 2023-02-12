@@ -15,3 +15,4 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: fd2b9d08bada8831b99fc8e2a17d38c0, type: 3}
   memoryRootSprite: {fileID: 0}
   collected: 0
+  dialog: {fileID: 11400000, guid: 91b5bede8558f7332917d41b323ceb74, type: 2}
