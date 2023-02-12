@@ -21,8 +21,8 @@ namespace Pathfinding {
 		[SerializeField] GameObject targetSelector;
 		public float alcance = 16f;
 		Collider2D jugador;
-		bool seleccionable = true;
-		[SerializeField] List<GameObject> PuntosControl;
+		//bool seleccionable = true;
+		//[SerializeField] List<GameObject> PuntosControl;
 
 
 		IAstarAI ai;
@@ -43,7 +43,7 @@ namespace Pathfinding {
 		/// <summary>Updates the AI's destination every frame</summary>
 		void Update () {
 			if (target != null && ai != null) ai.destination = target.position;
-			if(target == null && seleccionable)
+			if(target == null)
             {
 				SeleccionarObjetivo();
 			}
@@ -67,26 +67,26 @@ namespace Pathfinding {
 			Gizmos.DrawWireSphere(targetSelector.transform.position, alcance);
 		}
 
-		public void QuitarTarget()
-        {
-			StartCoroutine(TimerOlvidar());
-		}
+		//public void QuitarTarget()
+  //      {
+		//	StartCoroutine(TimerOlvidar());
+		//}
 
-		public IEnumerator TimerOlvidar()
-        {
-			seleccionable = false;
-			yield return new WaitForSeconds(10);
-            target = PuntosControl[0].transform;
-            target = null;
-            StartCoroutine(TimerEscape());
+		//public IEnumerator TimerOlvidar()
+  //      {
+		//	seleccionable = false;
+		//	yield return new WaitForSeconds(10);
+  //          target = PuntosControl[0].transform;
+  //          target = null;
+  //          StartCoroutine(TimerEscape());
 
-        }
+  //      }
 
-		public IEnumerator TimerEscape()
-        {
-			yield return new WaitForSeconds(5);
-			seleccionable = true;
+		//public IEnumerator TimerEscape()
+  //      {
+		//	yield return new WaitForSeconds(5);
+		//	seleccionable = true;
 
-		}
+		//}
 	}
 }
