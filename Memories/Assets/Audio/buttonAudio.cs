@@ -14,13 +14,7 @@ public class buttonAudio : MonoBehaviour
    public AudioSource sonido;
 
 
-    // Start is called before the first frame update
-    private void Start()
-    {
-        Button btn = GetComponent<Button>();
-        btn.onClick.AddListener(PlaySound);
-    }
-    void PlaySound()
+  public void ButtonSound()
     {
         sonido.Play();
     }
