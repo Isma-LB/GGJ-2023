@@ -9,6 +9,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource changeEffect;
     [SerializeField] AudioSource effectsSource;
     [SerializeField] SoundEffectCollection footsteps;
+    [SerializeField] SoundEffectCollection pickItem;
+    [SerializeField] SoundEffectCollection winEffect;
+    [SerializeField] SoundEffectCollection gameOverEffect;
     [SerializeField, Range(0,1)] float musicVolume = 0.5f;
     [SerializeField, Range(0,2)] float fadeSpeed = 1;
     [SerializeField, Range(0,2)] float footstepsPeriod = 1;
@@ -46,7 +49,16 @@ public class AudioManager : MonoBehaviour
     }
 
     public void PlayStep(){
-        footsteps.play(ref effectsSource);
+        footsteps?.play(ref effectsSource);
+    }
+    public void PlayPickEffect(){
+        pickItem?.play(ref effectsSource);
+    }
+    public void PlayWinEffect(){
+        winEffect?.play(ref effectsSource);
+    }
+    public void PlayGameOverEffect(){
+        gameOverEffect?.play(ref effectsSource);
     }
     // Start is called before the first frame update
     void Start()

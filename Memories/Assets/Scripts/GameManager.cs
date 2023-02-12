@@ -10,11 +10,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] UnityEvent onGameOver;
     bool gano = false;
     bool perdio = false;
+    AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -36,14 +37,16 @@ public class GameManager : MonoBehaviour
     public void gameOver(){
         if(gano == false)
         {
-        onGameOver.Invoke();
+            audioManager?.PlayGameOverEffect();
+            onGameOver.Invoke();
             perdio = true;
         }
     }
     public void winGame(){
         if(perdio == false)
         {
-        onWinGame.Invoke();
+            audioManager?.PlayWinEffect();
+            onWinGame.Invoke();
             gano = true;
         }
     }

@@ -8,10 +8,12 @@ public class CollectManager : MonoBehaviour
     public List<MemoryItem> list;
     CollectableUI ui;
     DialogManager dialog;
+    AudioManager audioManager;
     void Start()
     {
         ui = FindObjectOfType<CollectableUI>();
         dialog = FindObjectOfType<DialogManager>();
+        audioManager = FindObjectOfType<AudioManager>();
         foreach(MemoryItem item in list){
             item.collected = false;
         }
@@ -38,6 +40,9 @@ public class CollectManager : MonoBehaviour
                 dialog.DisplayDialog(item.dialog);
                 delay = item.dialog? item.dialog.displayTime : 0;
                 collectable.Collect();
+                if(audioManager){
+                    audioManager.PlayPickEffect();
+                }
                 Draw();
             }
             if(!item.collected){

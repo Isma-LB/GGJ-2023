@@ -14,7 +14,6 @@ public class SoundEffectCollection : ScriptableObject
         audioSource.pitch = pitch + Random.Range(-pitchVariation,pitchVariation);
         audioSource.volume = volume + Random.Range(-volumeVariation,volumeVariation);
         int randomIndex = Random.Range(0,sounds.Count - 1);
-        audioSource.clip = sounds[randomIndex];
-        audioSource.Play();
+        audioSource.PlayOneShot(sounds[randomIndex],volume + Random.Range(-volumeVariation,volumeVariation));
     }
 }
