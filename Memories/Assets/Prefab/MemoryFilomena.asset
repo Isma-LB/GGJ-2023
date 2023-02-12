@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7fbe3287cf761bbbad27c704c62204a, type: 3}
   m_Name: MemoryFilomena
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: be340a165cb9c8d4cb50f1deeb51d4ea, type: 3}
-  collected: 1
+  sprite: {fileID: 21300000, guid: 106a6430b5c8ea281a43751191ee269d, type: 3}
+  memoryRootSprite: {fileID: 0}
+  collected: 0
