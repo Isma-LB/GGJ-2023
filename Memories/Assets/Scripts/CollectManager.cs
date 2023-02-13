@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class CollectManager : MonoBehaviour
 {
+    [SerializeField] GameObject enemigo;
     public List<MemoryItem> list;
     CollectableUI ui;
+    DialogManager dialog;
+    AudioManager audioManager;
     void Start()
     {
         ui = FindObjectOfType<CollectableUI>();
+        dialog = FindObjectOfType<DialogManager>();
+        audioManager = FindObjectOfType<AudioManager>();
         foreach(MemoryItem item in list){
             item.collected = false;
         }
@@ -26,12 +31,18 @@ public class CollectManager : MonoBehaviour
     private void HandleCollectable(MemoryElement collectable)
     {
         bool completed = true;
+        float delay = 0;
         foreach (MemoryItem item in list)
         {
             if (item.name == collectable.memoryName)
             {
                 item.collected = true;
+                dialog.DisplayDialog(item.dialog);
+                delay = item.dialog? item.dialog.displayTime : 0;
                 collectable.Collect();
+                if(audioManager){
+                    audioManager.PlayPickEffect();
+                }
                 Draw();
             }
             if(!item.collected){
@@ -39,7 +50,8 @@ public class CollectManager : MonoBehaviour
             }
         }
         if(completed){
-            FindObjectOfType<GameManager>().winGame();
+            enemigo.SetActive(false);
+            TriggerWinEvent();
         }
     }
 
@@ -47,5 +59,8 @@ public class CollectManager : MonoBehaviour
         if(ui != null){
             ui.DisplayList(list);
         }
+    }
+    void TriggerWinEvent(){
+        FindObjectOfType<GameManager>().winGame();
     }
 }

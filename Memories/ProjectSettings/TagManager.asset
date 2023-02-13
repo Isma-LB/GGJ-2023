@@ -11,9 +11,9 @@ TagManager:
   - obstaculos
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - IgnoreCollition
+  - MiniMap
   - 
   - 
   - 

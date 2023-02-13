@@ -7,27 +7,48 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] UnityEvent onWinGame; 
-    [SerializeField] UnityEvent onGameOver; 
+    [SerializeField] UnityEvent onGameOver;
+    bool gano = false;
+    bool perdio = false;
+    AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.F)){
-            restartGame();
-        }
+        //if(Input.GetKeyDown(KeyCode.R)){
+        //    restartGame();
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.V) )
+        //{
+        //    winGame();
+        //}
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    gameOver();
+        //}
     }
     public void gameOver(){
-        Debug.Log("Game over!");
-        onGameOver.Invoke();
+        if(gano == false)
+        {
+            audioManager?.PlayGameOverEffect();
+            onGameOver.Invoke();
+            perdio = true;
+        }
     }
     public void winGame(){
-        Debug.Log("You Win!");
-        onWinGame.Invoke();
+        if(perdio == false)
+        {
+            audioManager?.PlayWinEffect();
+            onWinGame.Invoke();
+            gano = true;
+        }
     }
     void restartGame(){
         Debug.Log("Restart game!");
