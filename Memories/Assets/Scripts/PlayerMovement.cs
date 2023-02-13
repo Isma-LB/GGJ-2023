@@ -67,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if(input == Vector2.zero)
         {
+            particulas.Clear();
             particulas.Pause();
             animator.Play("Idle");
             audioManager.IsWaling = false;

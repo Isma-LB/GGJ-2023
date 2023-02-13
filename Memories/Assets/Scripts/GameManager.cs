@@ -21,18 +21,18 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R)){
-            restartGame();
-        }
+        //if(Input.GetKeyDown(KeyCode.R)){
+        //    restartGame();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.V) )
-        {
-            winGame();
-        }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            gameOver();
-        }
+        //if (Input.GetKeyDown(KeyCode.V) )
+        //{
+        //    winGame();
+        //}
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    gameOver();
+        //}
     }
     public void gameOver(){
         if(gano == false)

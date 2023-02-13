@@ -13,7 +13,7 @@ public class MobileWall : MonoBehaviour
         WallManager.onChangeState -= UpdateWall;
     }
     void UpdateWall(bool isActive){
-        Debug.Log("wall changed " + isActive);
+        //Debug.Log("wall changed " + isActive);
         foreach(Transform child in transform){
             child.gameObject.SetActive(isActive);
         }
